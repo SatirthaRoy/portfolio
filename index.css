@@ -84,6 +84,7 @@ nav a{
 }
 
 .name {
+  display: inline-block;
   color: rgb(255, 175, 255);
   padding: 10px;
   border-radius: 16px;
