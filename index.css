@@ -53,11 +53,20 @@ nav, .social {
 
 nav a{
   text-decoration: none;
-  color: rgb(51, 32, 50);
+  color: rgba(51, 32, 50, 0.988);
   font-size: medium;
   font-weight: 400;
+  transition: all .5s ease;
+
+  animation: none;
 }
 
+nav a:hover {
+  color: rgb(255, 200, 252);
+  padding: 8px 16px;
+  border-radius: 16px;
+  animation: linkHoverAnimation 2s linear infinite alternate;
+}
 
 
 .svg {
@@ -68,19 +77,46 @@ nav a{
 .content-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
   padding: 150px 10px;
   margin: 0 8%;
 }
 
 .content,.pic-container {
-  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
   margin: 10px;
   padding: 2%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.362), rgba(255, 255, 255, 0));
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
+}
+
+.content a {
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 50%;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 500;
+  color: rgba(56, 48, 48, 0.729);
+  text-align: center;
+  padding: 4% 0;
+  transition: all .3s ease-out;
+  animation: none;
+}
+
+.content a:hover {
+  color: white;
+  border: 1px solid rgba(128, 128, 128, 0);
+  font-weight: bold;
+  transform: scale(1.04);
+  animation: linkHoverAnimation 2s linear infinite alternate-reverse;
 }
 
 .name {
@@ -91,25 +127,24 @@ nav a{
   background-size: 400%;
   background-image: linear-gradient(45deg, rgba(255,10,254,1) 0%, rgba(231,0,36,1) 50%, rgba(83,1,235,1) 97%);
 
-  animation: gradientAnimation 1s linear infinite alternate;
+  animation: gradientAnimation 1.5s linear infinite alternate;
 }
 
 
 h3, h4 {
   color: #797979;
   font-weight: 400;
-  margin: 28px 0px;
+  /* margin: 28px 0px; */
 }
 
 h1 {
   color: #2b2b2b;
-  margin: 48px 0px;
+  /* margin: 48px 0px; */
 }
 
 .pic-container {
   height: auto;
   border-radius: 300px;
-  margin-right: 8%;
 }
 
 .pic {
@@ -138,4 +173,50 @@ h1 {
     background-position: right;
   }
   
+}
+
+@keyframes linkHoverAnimation {
+  0% {
+    background-image: linear-gradient(
+      45deg,
+      hsl(299deg 100% 53%) 0%,
+      hsl(311deg 100% 50%) 17%,
+      hsl(322deg 100% 50%) 25%,
+      hsl(331deg 100% 50%) 31%,
+      hsl(339deg 100% 50%) 37%,
+      hsl(337deg 100% 50%) 42%,
+      hsl(329deg 100% 50%) 47%,
+      hsl(321deg 100% 50%) 53%,
+      hsl(311deg 100% 50%) 58%,
+      hsl(304deg 100% 49%) 63%,
+      hsl(301deg 100% 48%) 69%,
+      hsl(297deg 100% 48%) 75%,
+      hsl(294deg 100% 49%) 83%,
+      hsl(290deg 100% 50%) 100%
+    );
+    background-size: 400%;
+    background-position: left;
+  }
+
+  100% {
+    background-image: linear-gradient(
+      45deg,
+      hsl(299deg 100% 53%) 0%,
+      hsl(311deg 100% 50%) 17%,
+      hsl(322deg 100% 50%) 25%,
+      hsl(331deg 100% 50%) 31%,
+      hsl(339deg 100% 50%) 37%,
+      hsl(337deg 100% 50%) 42%,
+      hsl(329deg 100% 50%) 47%,
+      hsl(321deg 100% 50%) 53%,
+      hsl(311deg 100% 50%) 58%,
+      hsl(304deg 100% 49%) 63%,
+      hsl(301deg 100% 48%) 69%,
+      hsl(297deg 100% 48%) 75%,
+      hsl(294deg 100% 49%) 83%,
+      hsl(290deg 100% 50%) 100%
+    );
+    background-size: 400%;
+    background-position: right;
+  }
 }
