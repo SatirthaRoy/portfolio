@@ -77,7 +77,6 @@ nav a:hover {
 }
 
 .content-container {
-  border: 1px solid;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -206,7 +205,7 @@ p {
 
 .react {
   color: rgb(208, 249, 255);
-  background-image: url('/svg/react.svg');
+  background-image: url('./svg/react.svg');
   animation: gradientAnimation 5s linear infinite alternate;
 }
 
